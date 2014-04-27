@@ -16,4 +16,7 @@ block content
   each entry in entries
     br
     h3 Stardate #{entry.stardate}
-    p #{entry.text}
+    p
+      form#formDeleteEntry(name="deleteentry", method="post", action="/deleteentry?stardate=#{entry.stardate}")
+        button#delSubmit(type="submit") X
+        |   #{entry.text}

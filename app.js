@@ -10,6 +10,7 @@ var monk = require('monk');
 
 var routes = require('./routes/index');
 var addentry = require('./routes/addentry');
+var deleteentry = require('./routes/deleteentry');
 
 var app = express();
 var db = monk('localhost:27017/captains-log');
@@ -33,6 +34,7 @@ app.use(function(req,res,next){
 
 app.use('/', routes);
 app.use('/addentry', addentry);
+app.use('/deleteentry', deleteentry);
 
 /// catch 404 and forwarding to error handler
 app.use(function(req, res, next) {

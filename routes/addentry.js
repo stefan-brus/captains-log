@@ -11,7 +11,6 @@ router.post('/', function(req, res) {
 
     var entries = db.get('entries');
 
-    // Submit to the DB
     entries.insert({
         "stardate" : stardate,
         "text" : text,
@@ -21,9 +20,7 @@ router.post('/', function(req, res) {
             res.send("There was a problem adding the entry to the database.");
         }
         else {
-            // If it worked, set the header so the address bar doesn't still say /adduser
             res.location("/");
-            // And forward to success page
             res.redirect("/");
         }
     });

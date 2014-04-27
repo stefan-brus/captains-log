@@ -13,7 +13,7 @@ router.get('/', function(req, res) {
         }
 
         entries.find({captain:"Kirk"},{},function(e, res_entries) {
-            if (e || res_entries.length == 0) {
+            if (e) {
                 res.send("Error getting entries from db");
             }
 

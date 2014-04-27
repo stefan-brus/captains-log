@@ -3,6 +3,10 @@ body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
-a {
-  color: #00B7FF;
+#delSubmit {
+  border: 0;
+  background-color: #ffffff;
+  padding: 5px;
+  font-weight: bold;
+  cursor: pointer;
 }
