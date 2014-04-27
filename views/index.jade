@@ -1,0 +1,19 @@
+extends layout
+
+block content
+  h1 Captain #{captain.name}'s Log
+  img(src=captain.picurl)
+  p Welcome, captain #{captain.fullname}
+  br
+  form#formAddEntry(name="addentry", method="post", action="/addentry")
+    input(type="hidden", name="captain", value="#{captain.name}")
+    input#inputStarDate(type="text", placeholder="1234.5", name="stardate", required)
+    br
+    textarea#textLogEntry(name="text", rows="8", cols="40", required) Log entry...
+    br
+    button#btnSubmit(type="submit") Enter
+  br
+  each entry in entries
+    br
+    h3 Stardate #{entry.stardate}
+    p #{entry.text}
